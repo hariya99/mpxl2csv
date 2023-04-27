@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mpxl2csv"
-version = "0.1.0"
+version = "0.1.1"
 description = "Uses Python multiprocessing to convert multiple Excel files to CSV files"
 authors = ["Harish Chauhan <harish.chauhan99@gmail.com>"]
 readme = "README.md"
@@ -20,7 +20,7 @@ include = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.6"
 openpyxl = "^3.1.2"
 
 
