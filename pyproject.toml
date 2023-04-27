@@ -5,8 +5,8 @@ description = "Uses Python multiprocessing to convert multiple Excel files to CS
 authors = ["Harish Chauhan <harish.chauhan99@gmail.com>"]
 readme = "README.md"
 license = "MIT"
-homepage = ""
-repository = ""
+homepage = "https://github.com/hariya99/mpxl2csv"
+repository = "https://github.com/hariya99/mpxl2csv"
 keywords = ["Excel", "CSV", "multiprocessing"]
 classifiers = [
     "Environment :: Console",
