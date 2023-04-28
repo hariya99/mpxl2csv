@@ -14,31 +14,31 @@ class Excel2Csv(object):
             mp.convert(xl_path, csv_path) 
     """
 
-    def __init__(self, num_processes=2, 
-                 engine="openpyxl",
-                 delimiter = "|") -> None:
+    def __init__(self, num_processes : int =2, 
+                 engine : str ="openpyxl",
+                 delimiter : str = "|") -> None:
         """
             Utilize Python's multiprocessing module to convert .xlsx files to .csv files.
             Param : num_processes: Number of processes to use for conversion
             Param : engine: Engine to use for conversion. Currently only openpyxl is supported 
             Param : delimiter: Delimiter to use for .csv files
         """
-        available_cores = multiprocessing.cpu_count()
+        available_cores : str  = multiprocessing.cpu_count()
         if num_processes > available_cores:
             warnings.warn(f"Number of processes ({num_processes}) " + 
                         f"is greater than the number of CPUs ({available_cores}). " +
                         f"It is advisable to use a number of processes less " +
                         f"than or equal to the number of CPUs.")
-        self.num_processes = num_processes
-        self.engine = engine
-        self.delimiter = delimiter
+        self.num_processes : int = num_processes
+        self.engine : str = engine
+        self.delimiter : str = delimiter
 
 
     def convert(self, xl_base_path : str, csv_base_path : str) -> None:
         """
             Convert all .xlsx files in a directory to .csv files.
         """
-        xl_files = self._get_xl_files(xl_base_path)
+        xl_files : List[str] = self._get_xl_files(xl_base_path)
         self._convert_files(xl_files, csv_base_path)
 
     def _get_xl_files(self, xl_base_path : str) -> List[str]:
